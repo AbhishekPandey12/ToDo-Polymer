@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="todo-data">
+    <template></template>
+    <script>
+        class TodoData extends Polymer.Element{
+
+            static get is(){
+                return 'todo-data';
+            }
+
+            static get properties(){
+                return {
+                    todos: {
+                        notify: true, //enables 2-way binding
+                        value: function () {
+                            return [
+                                {
+                                    name: 'Buy Some Milk',
+                                    done: true,
+                                    archive: false
+                                },
+                                {
+                                    name: 'Learn Polymer',
+                                    done: true,
+                                    archive: false
+                                },
+                                {
+                                    name: 'Clean House',
+                                    done: false,
+                                    archive: false
+                                }
+                            ]
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+        window.customElements.define(TodoData.is, TodoData);
+    </script>
+
+</dom-module>
